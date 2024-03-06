@@ -30,20 +30,13 @@ function parseTime(timeString) {
 }
 
 
-const hashStr = (str, length = 32) => {
-    const CHARS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    let result = '';
-	let n = 1;
-    for (let i of str) {
-		n = Math.sin(1000*(i.charCodeAt(0)+n));
-    }
-
-    for (let i = 1; i <= length; i++) {
-		n = Math.sin(1000*(i+n));
-		const random = n*1000 - Math.floor(n*1000);
-		result += CHARS[Math.floor(random*(CHARS.length-1))];
-    }
-    return result;
+const hashStr = (str, length=32)=>{
+	let n=0; let res=""; const char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+	for(let c of str.split('').map(x=>x.charCodeAt(0))) n = Math.sin(c * (n-1)*(n+1))*c;
+	for(let i=1;i<=length;i++) {
+		n = Math.sin(i * (n-1)*(n+1))*i; let p = n*n;
+		res += char[Math.round(p*100)%char.length];
+	} return res;
 }
 
 
