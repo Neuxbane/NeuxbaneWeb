@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="animation.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="transition.css">
+		<style id="css"></style>
+		<style id="cssTransition"></style>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<script src="script_before.js"></script>
+		<script src="script_after.js" defer></script>
+	</head>
+	<body style="background-color: #112;">
+		<div id="notification" style="position: fixed; width: 20rem; right: 0; margin: 0rem; z-index: 999999; top: 0;">
+			  
+			  
+		</div>
+		<div id="menubar" style="width: 100%; height:5rem; position: relative; z-index: 1;">
+			<div style="position: absolute; width: 100%; height:5rem; background-image: linear-gradient(180deg, #234, #0000); display: flex;;">
+				<div class="image" style="background-image: url(/assets/official/neuxbane.png); width: 4rem; height: 4rem; margin: .5rem"></div>
+				<h id="pageName" style="font-size: xx-large; margin: auto 0;"></h>
+			</div>
+			<div id="menus" style="display: flex; position: absolute; right: 0; padding: .5rem;"></div>
+		</div>
+		<div style="width: 100%; height: 100%; position: relative;">
+			<div id="contentTransition" style="width: 100%; height: 100%; position: absolute; overflow-y: scroll;"></div>
+			<div id="content" style="width: 100%; height: 100%; position: absolute; overflow-y: scroll;">
+				Please read readme.md
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,268 @@
+html, body {margin:0;width:100%;height:100%;display:flex;flex-direction:column;color:white}
+* {
+	font-family: 'nasalization', sans-serif; /* Use the custom font as the default font family */
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.image {
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+button {
+  cursor: pointer;
+}
+
+@font-face {
+	font-family: 'nasalization'; /* Name your font */
+	src: url('assets/nasalization-rg.otf') format('opentype'); /* Path to your OTF font file */
+}
+
+@font-face {
+	font-family: 'pdark'; /* Name your font */
+	src: url('assets/pdark.ttf') format('truetype'); /* Path to your OTF font file */
+}
+
+
+
+:root {
+
+  --input-color: #9AB;
+  --input-border: #bfcbe0;
+  --input-background: #fff1;
+  --input-placeholder: #CBD1DC;
+  --input-border-focus: #7f65;
+  --group-color: var(--input-color);
+  --group-border: var(--input-border);
+  --group-background: #fff3;
+  --group-color-focus: #fff;
+  --group-border-focus: var(--input-border-focus);
+  --group-background-focus: #7f65;
+
+}
+
+.form-field {
+    display: block;
+    width: 100%;
+    padding: 8px 16px;
+    line-height: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    border-radius: 6px;
+    -webkit-appearance: none;
+    color: var(--input-color);
+    border: 1px solid var(--input-border);
+    background: var(--input-background);
+    transition: border .3s ease;
+    &::placeholder {
+        color: var(--input-placeholder);
+    }
+    &:focus {
+        outline: none;
+        border-color: var(--input-border-focus);
+    }
+}
+
+.form-group {
+    position: relative;
+    display: flex;
+    width: 100%;
+    & > span,
+    .form-field {
+        white-space: nowrap;
+        display: block;
+        &:not(:first-child):not(:last-child) {
+            border-radius: 0;
+        }
+        &:first-child {
+            border-radius: 6px 0 0 6px;
+        }
+        &:last-child {
+            border-radius: 0 6px 6px 0;
+        }
+        &:not(:first-child) {
+            margin-left: -1px;
+        }
+    }
+    .form-field {
+        position: relative;
+        z-index: 1;
+        flex: 1 1 auto;
+        width: 1%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    & > span {
+        text-align: center;
+        padding: 8px 12px;
+        font-size: 14px;
+        line-height: 25px;
+        color: var(--group-color);
+        background: var(--group-background);
+        border: 1px solid var(--group-border);
+        transition: background .3s ease, border .3s ease, color .3s ease;
+    }
+    &:focus-within {
+        & > span {
+            color: var(--group-color-focus);
+            background: var(--group-background-focus);
+            border-color: var(--group-border-focus);
+        }
+    }
+}
+
+.form-group:not(:has(> span)) .form-field {
+    border-radius: 6px !important;
+}
+
+.button{
+    position: absolute;
+    border: 5px solid #f9c23c;
+    border-radius: 7px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .button p{
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    font-weight: 900;
+    font-size: 20px;
+    margin: 0.5em 0.5em 0.5em 2em;
+    transition: all 0.5s ease;
+  }
+  
+  /* Style the first icon with class send */
+  .button i:nth-child(1){
+    position: absolute;
+    top: 15px;
+    left: 0.5rem;
+    color: #fff;
+    transition: all 0.5s ease;
+    margin-top: -0.5rem;
+  }
+  
+  /* Style the second icon with class send2 */
+  .button i:nth-child(2) {
+    position: absolute;
+    top: 80px;
+    left: 0.5rem;
+    color: #696666;
+    transition: all 0.5s ease;
+    margin-top: -0.5rem;
+  }
+  
+  
+  /* Hover effects */
+  .button:hover{
+    background: #f9c23c;
+    transition: all 0.5s ease;
+  }
+  
+  .button:hover p{
+    color: #696666;
+    transition: all 0.5s ease;
+    animation: move 1s linear 1s forwards;
+  }
+  
+  .button:hover i:nth-child(1){
+    top: -50px;
+    transition: all 0.5s ease;
+  }
+  
+  .button:hover i:nth-child(2){
+    top: 15px;
+    transition: all 0.5s ease;
+    animation: sending 1s linear 1s forwards;
+  }
+  
+  
+  /* CSS3 animation keyframes */
+  @keyframes sending{
+    0%{
+      transform: translateY(0);
+    }
+    100%{
+      transform: translate(40px, -60px);
+    }
+  }
+  
+  @keyframes move{
+    0%{
+      transform: translateX(0);
+    }
+    100%{
+      transform: translateX(-18px);
+    }
+  }
+
+
+  .alert {
+    position: relative;
+    top: 10;
+    left: 0;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    margin: 10px;
+    line-height: 1.8;
+    border-radius: 5px;
+    cursor: hand;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-weight: 400;
+  }
+  
+  .alertCheckbox {
+    display: none;
+  }
+  
+  :checked + .alert {
+    display: none;
+  }
+  
+  .alertText {
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .alertClose {
+    float: right;
+    padding-top: 5px;
+    font-size: 10px;
+  }
+  
+  .clear {
+    clear: both;
+  }
+  
+  .info {
+    background-color: #3ed4;
+    border: 1px solid #3feb;
+    color: #999;
+  }
+  
+  .success {
+    background-color: #3f64;
+    border: 1px solid #3f6b;
+    color: #9A9;
+  }
+  
+  .warning {
+    background-color: #fe24;
+    border: 1px solid #fe2b;
+    color: #C9971C;
+  }
+  
+  .error {
+    background-color: #f224;
+    border: 1px solid #f22b;
+    color: #A66;
+  }

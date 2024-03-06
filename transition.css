@@ -1,0 +1,17 @@
+@keyframes slideRightIn {
+	0% {
+		transform: translateX(calc(100% + 10px));
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideLeftOut {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(calc(-100% - 10px));
+	}
+}

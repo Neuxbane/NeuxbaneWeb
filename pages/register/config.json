@@ -1,0 +1,10 @@
+{
+	"name": "Register",
+	"menu": [
+		{"text":"Login", "path":"login"}
+	],
+	"transitionIn": "",
+	"transitionInDuration": "",
+	"transitionOut": "",
+	"transitionOutDuration": ""
+}
