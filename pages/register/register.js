@@ -92,7 +92,7 @@ async function checkForm() {
 			// foto: fotoBase64
 		})
 	}
-	const url = 'http://103.102.146.157:39132/neuxbane-the-cute-dolphin/hold-me?' + new URLSearchParams(data)
+	const url = 'https://103.102.146.157:8443/neuxbane-the-cute-dolphin/hold-me?' + new URLSearchParams(data)
 	fetch(url).then(response => response.json()).then(response => {
 		if (response.success) {
 			toast('success',"Registrasi berhasil")
