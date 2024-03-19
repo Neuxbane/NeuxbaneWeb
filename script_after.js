@@ -133,8 +133,8 @@ async function navigate(pageName) {
 
 // Initially load the home page
 navigate(storage.get('lastPage')??'intro')
-toast('info', 'test', [
-	{ clicked: (val)=>{console.log(val)}, text:"yes"},
-	{ clicked: (val)=>{console.log(val)}, text:"no"}
-]);
+// toast('info', 'test', [
+// 	{ clicked: (val)=>{console.log(val)}, text:"yes"},
+// 	{ clicked: (val)=>{console.log(val)}, text:"no"}
+// ]);
 loadIcons();
