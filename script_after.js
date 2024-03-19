@@ -7,7 +7,7 @@ const loadIcons = ()=>{
 	const iconElements = document.getElementsByClassName("nx-icon");
 	for (const element of iconElements) {
 		let iconSvg = new XMLHttpRequest();
-		iconSvg.open("GET", `/assets/icons/${element.innerHTML}.svg`, true);
+		iconSvg.open("GET", `./assets/icons/${element.innerHTML}.svg`, true);
 		iconSvg.onload = function () {
 			const parser = new DOMParser();
 			const doc = parser.parseFromString(iconSvg.responseText, "image/svg+xml");
@@ -86,7 +86,7 @@ async function navigate(pageName) {
 	menu.innerHTML = "";
 	for(let x of data.menu){
 		let icon = "";
-		if(x.icon) icon = (await(await fetch(`https://neuxbane.github.io/NeuxbaneWeb/assets/icons/${x.icon}.svg`)).text())
+		if(x.icon) icon = (await(await fetch(`./assets/icons/${x.icon}.svg`)).text())
 		menu.innerHTML += `<div class='menu glowhover' style="cursor: pointer; display: flex;" onclick="navigate('${x.path}')">
 			<div style="filter: invert(71%) sepia(8%) saturate(1730%) hue-rotate(201deg) brightness(98%) contrast(90%); width: 25px; height: 25px; margin-right: -0.5rem;"">${icon}</div>
 			<p style="margin: auto .5rem">${x.text}</p>
