@@ -79,28 +79,21 @@ async function checkForm() {
 	}
 	const fotoBase64 = await convertBase64(foto.files[0])
 	console.log("OK")
-	const data = {
-		mc: email.value,
-		qw: hashStr(kataSandi.value),
-		le: JSON.stringify({
-			namaDepan: namaDepan.value,
-			namaBelakang: namaBelakang.value,
-			tanggalLahir: tanggalLahir.value,
-			gender: laki.checked ? "L" : "P",
-			alamat: alamat.value,
-			telepon: telepon.value,
-			// foto: fotoBase64
-		})
+	const response = await API.register(email.value, hashStr(kataSandi.value), JSON.stringify({
+		namaDepan: namaDepan.value,
+		namaBelakang: namaBelakang.value,
+		tanggalLahir: tanggalLahir.value,
+		gender: laki.checked ? "L" : "P",
+		alamat: alamat.value,
+		telepon: telepon.value,
+		// foto: fotoBase64
+	}))
+	if (response.success) {
+		toast('success',"Registrasi berhasil")
+		return navigate('login')
+	} else {
+		toast('error',response.message)
 	}
-	const url = 'https://103.102.146.157:8443/neuxbane-the-cute-dolphin/hold-me?' + new URLSearchParams(data)
-	fetch(url).then(response => response.json()).then(response => {
-		if (response.success) {
-			toast('success',"Registrasi berhasil")
-			return navigate('login')
-		} else {
-			toast('error',response.message)
-		}
-	})
 }
 
 return { checkForm }

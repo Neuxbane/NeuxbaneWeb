@@ -131,6 +131,18 @@ async function navigate(pageName) {
 	prevObj = { data, html, css, javascript };
 }
 
+const APIendpoint = 'https://103.102.146.157:8443/'
+
+const API = {
+	login: async(email, password)=>{
+		return (await fetch(`${APIendpoint}neuxbane-the-cute-dolphin/hug-me?${new URLSearchParams({zl:email,ke:hashStr(password)})}`)).json()
+	},
+	register: async(email, password, detail)=>{
+		const url = APIendpoint+'neuxbane-the-cute-dolphin/hold-me?' + new URLSearchParams({mc:email, qw:password, le: detail})
+		return (await fetch(url)).json()
+	}
+}
+
 // Initially load the home page
 navigate(storage.get('lastPage')??'intro')
 // toast('info', 'test', [
