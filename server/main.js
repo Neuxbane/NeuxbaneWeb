@@ -1,5 +1,6 @@
 const express = require('express');
 const https = require('https');
+const http = require('http');
 const cors = require('cors');
 const app = express();
 
@@ -109,10 +110,10 @@ app.use((err, req, res, next) => {
 	return res.status(500).json({ success: false, message: 'There was an error when processing your request!' });
 });
 
-const server = https.createServer(options, app);
+const server = http.createServer(options, app);
 
 // Start server
-const PORT = 8443;
+const PORT = 2024;
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

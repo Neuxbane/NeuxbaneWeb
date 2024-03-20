@@ -131,7 +131,7 @@ async function navigate(pageName) {
 	prevObj = { data, html, css, javascript };
 }
 
-const APIendpoint = 'https://103.102.146.157:8443/'
+const APIendpoint = 'http://103.102.146.157:2024/'
 
 const API = {
 	login: async(email, password)=>{
