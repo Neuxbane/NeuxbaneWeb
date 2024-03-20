@@ -10,6 +10,20 @@ using Nodejs `http-server`
 http-server
 ```
 
+before running the API service please re-configure the endpoint API in `script_after.js` at line 134;
+```js
+const APIendpoint = 'http://localhost:2024/'
+```
+
+Then, run the API by using:
+```bash
+# Go to the API Service directory
+cd server
+
+# run the API Service
+node main.js
+```
+
 ## Documentation
 
 ### To navigate
