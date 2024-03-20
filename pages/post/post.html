@@ -16,7 +16,7 @@
 			<h>Create a new post</h>
 			<div style="height: 1rem;"></div>
 
-			<input type="file" id="inputImage" onchange="
+			<input type="file" id="imagepost" onchange="
 				var file = document.getElementById('inputImage').files[0];
 				var reader = new FileReader();
 				reader.onloadend = function () {
@@ -46,7 +46,7 @@
 					required
 				/>
 			</div>
-			<button class="form-field" style="margin-top: 1rem;">Upload</button>
+			<button onclick="global.upload()" class="form-field" style="margin-top: 1rem;">Upload</button>
 		</div>
 
 	</div>
