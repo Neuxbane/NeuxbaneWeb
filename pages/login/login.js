@@ -9,13 +9,13 @@ onload = () => {
 async function checkForm() {
 	const email = document.getElementById("email").value;
 	const kataSandi = document.getElementById("kataSandi").value;
-	toast('success', data.message);
+	toast('success', 'success');
 	navigate("home");
 
-	// API HAS AN SSL CERTIFICATE ERROR
+	// API HAS AN SSL CERTIFICATE
 	const data = await API.login(email, kataSandi);
 	if (data.success) {
-	toast('success', data.message);
+		toast('success', data.message);
 		storage.set('profile', data.data);
 		return navigate("home");
 	} else {
